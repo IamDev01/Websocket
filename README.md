@@ -34,4 +34,4 @@ Você precisará ter instalado o Nodejs, em seu terminal vá para a pasta do pro
 `npm install -y`
 `node server.js`
 
-Abra um novo terminal e execute `npm run dev` agora você pode acessar a aplicação em locahost:3000 ou localhost:3000/operador
+Abra um novo terminal e execute `npm run dev` agora você pode acessar a aplicação em locahost:3000 e localhost:3000/operador
