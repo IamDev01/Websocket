@@ -1,0 +1,75 @@
+/* Estilo para o container principal */
+.container {
+    width: 80%;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+    justify-content: center;
+    /* Centralize verticalmente */
+    align-items: center;
+    /* Centralize horizontalmente */
+    margin: 0 auto;
+    /* Centralize o container horizontalmente na página */
+}
+
+.dialogoContainer {
+    justify-content: center;
+    border: 1px solid rgb(204, 204, 204);
+    width: 100%; /* Defina a largura para 100% */
+    background-color: white;
+}
+
+.dialogoTitulo {
+    margin-left: 5px;
+}
+
+.dialogo {
+    overflow-y: auto;
+    border: 1px solid rgb(204, 204, 204);
+    width: 100%; /* Defina a largura para 100% */
+    height: 350px;
+    background-color: white;
+}
+
+.pagetitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input {
+    background-color: rgb(242, 242, 242);
+    border: 1px solid rgb(204, 204, 204);
+    font-size: 16px;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    /* Inclua a margem e o padding na largura total */
+}
+
+/* Estilo para a seção de mensagens recebidas */
+.subtitle {
+    font-size: 20px;
+}
+
+.message {
+    word-wrap: break-word;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.operador {
+    color: green;
+}
+
+.cliente {
+    color: orange;
+}
