@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Servidor Websocket
 
-## Getting Started
+## server.js:
 
-First, run the development server:
+Esse código configura um servidor WebSocket simples que pode receber mensagens dos clientes e transmiti-las para todos os clientes conectados. É um exemplo básico de uso do Socket.IO para criar comunicações em tempo real. Lembre-se de que você pode adicionar lógica adicional, como autenticação de clientes ou manipulação de eventos personalizados, conforme necessário para o seu aplicativo. Vou explicar cada parte do código:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Importação das dependências:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O código começa importando o módulo http do Node.js e a biblioteca Socket.IO.
+Criação do servidor HTTP:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+O servidor HTTP é criado usando o método http.createServer(). Este servidor será usado como base para o servidor WebSocket.
+Configuração do Socket.IO:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+A biblioteca Socket.IO é inicializada passando o servidor HTTP criado anteriormente como argumento.
+É configurada uma política CORS para permitir que qualquer origem ('*') se conecte ao servidor WebSocket. Isso é útil para permitir conexões de diferentes domínios.
+Lida com conexões WebSocket:
 
-## Learn More
+Quando um cliente WebSocket se conecta, a função passada para io.on('connection', ...) é executada.
+O servidor imprime o ID do socket recém-conectado no console, que é uma identificação única para cada cliente.
+Lida com mensagens enviadas pelos clientes:
 
-To learn more about Next.js, take a look at the following resources:
+Quando um cliente envia uma mensagem com o evento 'enviar-mensagem', o servidor emite essa mensagem para todos os clientes conectados usando io.emit('receber-mensagem', mensagem).
+Lida com desconexões de clientes:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Quando um cliente se desconecta, o servidor imprime o ID do socket desconectado no console.
+Inicialização do servidor WebSocket:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+O servidor WebSocket é inicializado na porta 3001 usando app.listen(). O console exibe uma mensagem informando que o servidor WebSocket foi iniciado com sucesso na porta especificada.
 
-## Deploy on Vercel
+## Passos para executar o projeto
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Você precisará ter instalado o Nodejs, em seu terminal vá para a pasta do projeto e execute os seguintes comandos:
+`npm install -y`
+`node server.js`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Abra um novo terminal e execute `npm run dev` agora você pode acessar a aplicação em locahost:3000 ou localhost:3000/operador
