@@ -1,4 +1,4 @@
-#Sistema de Chat em Tempo Real
+# Sistema de Chat em Tempo Real
 
 ## Visão Geral
 Este projeto consiste em um sistema de chat em tempo real, desenvolvido em React e Socket.io. Ele permite que os clientes se conectem a operadores e troquem mensagens instantaneamente.
